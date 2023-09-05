@@ -4,7 +4,7 @@ public class FlightFilterArrivalBeforeDeparture implements FlightFilter{
 
     public boolean segmentCheck(Flight flight) {
         for (Segment segment : flight.getSegments()) {
-            if (segment.getDepartureDate().isBefore(segment.getArrivalDate())) {
+            if (segment.getArrivalDate().isBefore(segment.getDepartureDate())) {
                 return false;
             }
         }

@@ -9,7 +9,7 @@ public class FlightFilterMoreThen2HoursOnLand implements FlightFilter{
         List<Segment> segments = flight.getSegments();
         for(int i = 0; i < segments.size()-1; i++){
             Duration duration = Duration.between(segments.get(i).getArrivalDate(),segments.get(i+1).getDepartureDate());
-            if(duration.toHours() > 2){
+            if(duration.toHours() >= 2){
                 return false;
             }
         }
